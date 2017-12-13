@@ -8,6 +8,7 @@ package javaalgorithms;
 import javaalgorithms.algorithms.sort.BubbleSorter;
 import javaalgorithms.algorithms.sort.DefaultSorter;
 import javaalgorithms.algorithms.sort.InsertionSorter;
+import javaalgorithms.algorithms.sort.MergeSorter;
 import javaalgorithms.algorithms.sort.QuickIndexSorter;
 import javaalgorithms.algorithms.sort.QuickObjectSorter;
 import javaalgorithms.algorithms.sort.SortTimer;
@@ -36,6 +37,7 @@ public class JavaAlgorithms {
         Sorter is = new InsertionSorter(listorator);
         Sorter bs = new BubbleSorter(listorator);
         Sorter ds = new DefaultSorter(listorator);
+        Sorter ms = new MergeSorter(listorator);
 
         // Get Results
         System.out.println(timer.timeIt(qos)+" nanoseconds for Quick Object Sort");
@@ -43,6 +45,7 @@ public class JavaAlgorithms {
         System.out.println(timer.timeIt(is)+" nanoseconds for Insertion Sort");
         System.out.println(timer.timeIt(bs)+" nanoseconds for Bubble Sort");
         System.out.println(timer.timeIt(ds)+" nanoseconds for Default Sort");
+        System.out.println(timer.timeIt(ms)+" nanoseconds for Merge Sort");
     }
     
 }

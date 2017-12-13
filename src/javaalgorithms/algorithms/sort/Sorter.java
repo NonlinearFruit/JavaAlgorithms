@@ -28,6 +28,10 @@ public abstract class Sorter<T> {
         return list;
     }
     
+    public void setList(List<T> list) {
+        this.list = list;
+    }
+    
     public Comparator<? super T> getComparator() {
         return comparator;
     }
