@@ -5,12 +5,15 @@
  */
 package javaalgorithms.algorithms.sort;
 
+import java.text.DecimalFormat;
+
 /**
- *
+ * Time a sort algorithm to see how fast it is!
  * @author nonfrt
  */
 public class SortTimer {
     
+    private DecimalFormat oneDigit = new DecimalFormat("#0.0");//format to 1 decimal place
     private int iterations;
     
     public SortTimer(int iterations) {
@@ -19,7 +22,7 @@ public class SortTimer {
     
     /**
      * Returns the average of performing the sort 'iterations' times
-     * in nanoseconds
+     * in nanoseconds. It is rounded to 1 decimal place.
      * @return 
      */
     public double timeIt(Sorter sorter) {
@@ -30,6 +33,6 @@ public class SortTimer {
             sorter.sort();
             totalTime += System.nanoTime() - time;
         }
-        return totalTime*1.0/iterations;
+        return Double.valueOf(oneDigit.format(totalTime*1.0/iterations));
     }
 }

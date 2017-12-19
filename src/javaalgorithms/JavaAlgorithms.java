@@ -13,8 +13,8 @@ import javaalgorithms.algorithms.sort.QuickIndexSorter;
 import javaalgorithms.algorithms.sort.QuickObjectSorter;
 import javaalgorithms.algorithms.sort.SortTimer;
 import javaalgorithms.algorithms.sort.Sorter;
-import javaalgorithms.generators.IntegerListGenerator;
 import javaalgorithms.generators.ListGenerator;
+import javaalgorithms.generators.WordListGenerator;
 
 /**
  *
@@ -26,9 +26,9 @@ public class JavaAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int size = 20;
-        int iter = 20;
-        ListGenerator listorator = new IntegerListGenerator(size);
+        int size = 40;
+        int iter = 100;
+        ListGenerator listorator = new WordListGenerator(size);
         SortTimer timer = new SortTimer(iter);
         
         // Sort Algos
@@ -40,12 +40,12 @@ public class JavaAlgorithms {
         Sorter ms = new MergeSorter(listorator);
 
         // Get Results
-        System.out.println(timer.timeIt(qos)+" nanoseconds for Quick Object Sort");
-        System.out.println(timer.timeIt(qis)+" nanoseconds for Quick Index Sort");
-        System.out.println(timer.timeIt(is)+" nanoseconds for Insertion Sort");
-        System.out.println(timer.timeIt(bs)+" nanoseconds for Bubble Sort");
-        System.out.println(timer.timeIt(ds)+" nanoseconds for Default Sort");
-        System.out.println(timer.timeIt(ms)+" nanoseconds for Merge Sort");
+        System.out.println(String.format("%1$" + 10 + "s", timer.timeIt(qos))+" nanoseconds for Quick Object Sort");
+        System.out.println(String.format("%1$" + 10 + "s", timer.timeIt(qis))+" nanoseconds for Quick Index Sort");
+        System.out.println(String.format("%1$" + 10 + "s", timer.timeIt(is))+" nanoseconds for Insertion Sort");
+        System.out.println(String.format("%1$" + 10 + "s", timer.timeIt(bs))+" nanoseconds for Bubble Sort");
+        System.out.println(String.format("%1$" + 10 + "s", timer.timeIt(ds))+" nanoseconds for Default Sort");
+        System.out.println(String.format("%1$" + 10 + "s", timer.timeIt(ms))+" nanoseconds for Merge Sort");
     }
     
 }
