@@ -5,6 +5,8 @@
  */
 package javaalgorithms;
 
+import javaalgorithms.algorithms.primality.MillerRabinPrimality;
+import javaalgorithms.algorithms.primality.Primality;
 import javaalgorithms.algorithms.sort.BubbleSorter;
 import javaalgorithms.algorithms.sort.DefaultSorter;
 import javaalgorithms.algorithms.sort.InsertionSorter;
@@ -26,6 +28,24 @@ public class JavaAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // Primes
+        int[] primes = new int[]{2,3,5,7,19,97,3823,7057};
+        // Composites
+        int[] compos = new int[]{1,4,6,8,100,1024,32472,141235};
+        
+        // Primalities
+        Primality primeTest = new MillerRabinPrimality();
+        
+        for (int compo : compos)
+            if (primeTest.isPrime(compo))
+                System.out.println("FAILED: "+compo+" is Composite");
+        
+        for (int prime : primes)
+            if (!primeTest.isPrime(prime))
+                System.out.println("FAILED: "+prime+" is Prime");
+    }
+    
+    public static void sortComparison() {
         int size = 40;
         int iter = 100;
         ListGenerator listorator = new WordListGenerator(size);
