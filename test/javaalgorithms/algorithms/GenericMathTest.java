@@ -114,6 +114,27 @@ public class GenericMathTest {
         long expResult = 1L;
         long result = GenericMath.modPower(base, exponent, modulus);
         assertEquals(expResult, result);
+        
+        base = 2L;
+        exponent = 3L;
+        modulus = 7L;
+        expResult = 1L;
+        result = GenericMath.modPower(base, exponent, modulus);
+        assertEquals(expResult, result);
+        
+        base = 2L;
+        exponent = 5L;
+        modulus = 13L;
+        expResult = 6L;
+        result = GenericMath.modPower(base, exponent, modulus);
+        assertEquals(expResult, result);
+        
+        base = 34L;
+        exponent = 54L;
+        modulus = 21L;
+        expResult = 1L;
+        result = GenericMath.modPower(base, exponent, modulus);
+        assertEquals(expResult, result);
     }
 
     /**

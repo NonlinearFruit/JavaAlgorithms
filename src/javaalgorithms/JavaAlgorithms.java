@@ -5,8 +5,11 @@
  */
 package javaalgorithms;
 
+import java.util.Random;
 import javaalgorithms.algorithms.primality.MillerRabinPrimality;
 import javaalgorithms.algorithms.primality.Primality;
+import javaalgorithms.algorithms.primality.PrimeTimer;
+import javaalgorithms.algorithms.primality.SquareRootPrimality;
 import javaalgorithms.algorithms.sort.BubbleSorter;
 import javaalgorithms.algorithms.sort.DefaultSorter;
 import javaalgorithms.algorithms.sort.InsertionSorter;
@@ -28,21 +31,14 @@ public class JavaAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Primes
-        int[] primes = new int[]{2,3,5,7,19,97,3823,7057};
-        // Composites
-        int[] compos = new int[]{1,4,6,8,100,1024,32472,141235};
+        int iter = 1000;
+        PrimeTimer timer = new PrimeTimer(iter);
         
         // Primalities
-        Primality primeTest = new MillerRabinPrimality();
+        Primality rm = new MillerRabinPrimality();
+        Primality sr = new SquareRootPrimality();
         
-        for (int compo : compos)
-            if (primeTest.isPrime(compo))
-                System.out.println("FAILED: "+compo+" is Composite");
-        
-        for (int prime : primes)
-            if (!primeTest.isPrime(prime))
-                System.out.println("FAILED: "+prime+" is Prime");
+        rm.getPrimesBelow(100000000);
     }
     
     public static void sortComparison() {

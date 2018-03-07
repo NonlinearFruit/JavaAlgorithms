@@ -91,11 +91,26 @@ public class GenericMath {
      * @return 
      */
     public static long modPower(long base, long exponent, long modulus) {
-        while(exponent > 0) {
-            base = base*base % modulus;
-            exponent--;
+        // Initialize result
+        long result = 1;     
+        
+        // Update base if it is more  
+        // than or equal to modulus
+        base = base % modulus; 
+     
+        while (exponent > 0)
+        {
+            // If exponent is odd, multiply base
+            // with result
+            if((exponent & 1)==1)
+                result = (result * base) % modulus;
+     
+            // exponent must be even now
+            // exponent = exponent / 2
+            exponent = exponent >> 1; 
+            base = (base * base) % modulus; 
         }
-        return base;
+        return result;
     }
     
     /**
