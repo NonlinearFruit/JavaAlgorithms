@@ -17,7 +17,8 @@ public class EratosthenesPrimality implements Primality{
 
     @Override
     public boolean isPrime(long x) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Long> primes = getPrimesBelow(x+1);
+        return primes.contains(x);
     }
 
     @Override

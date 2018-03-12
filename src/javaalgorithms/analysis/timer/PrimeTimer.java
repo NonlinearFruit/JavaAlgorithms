@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaalgorithms.algorithms.primality;
+package javaalgorithms.analysis.timer;
 
 import java.text.DecimalFormat;
 import java.util.Random;
+import javaalgorithms.algorithms.primality.Primality;
+import javaalgorithms.analysis.timer.Timer;
 
 /**
  *
  * @author nonfrt
  */
-public class PrimeTimer {
+public class PrimeTimer implements Timer<Primality>{
     
     private DecimalFormat oneDigit = new DecimalFormat("#0.0");//format to 1 decimal place
     private int iterations;

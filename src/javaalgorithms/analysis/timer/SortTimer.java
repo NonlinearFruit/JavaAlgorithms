@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaalgorithms.algorithms.sort;
+package javaalgorithms.analysis.timer;
 
 import java.text.DecimalFormat;
+import javaalgorithms.algorithms.sort.Sorter;
+import javaalgorithms.analysis.timer.Timer;
 
 /**
  * Time a sort algorithm to see how fast it is!
  * @author nonfrt
  */
-public class SortTimer {
+public class SortTimer implements Timer<Sorter>{
     
     private DecimalFormat oneDigit = new DecimalFormat("#0.0");//format to 1 decimal place
     private int iterations;
